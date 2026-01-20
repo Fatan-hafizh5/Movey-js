@@ -1,101 +1,129 @@
-# Move.js: Library Animasi DOM Sederhana
-Move.js adalah sebuah library JavaScript yang memungkinkan Anda membuat animasi DOM sederhana dengan mudah. Dengan menggunakan Move.js, Anda dapat menganimasikan elemen-elemen HTML dengan berbagai jenis gerakan, seperti pergeseran, rotasi, dan lain-lain.
+# Move.js
+## Library untuk Animasi DOM Sederhana
+
+Move.js adalah sebuah library JavaScript yang memungkinkan Anda untuk membuat animasi DOM sederhana dengan mudah. Dengan menggunakan library ini, Anda dapat membuat objek bergerak, berputar, dan melakukan animasi lainnya dengan mudah.
 
 ## Cara Instalasi/Penggunaan Awal
-Untuk menggunakan Move.js, Anda hanya perlu membuat instance dari kelas `Move`:
+
+Untuk menggunakan library ini, Anda hanya perlu membuat instance dari kelas `Move`:
 ```javascript
 const movey = new Move();
 ```
-Setelah itu, Anda dapat menggunakan berbagai metode yang disediakan oleh library ini untuk membuat animasi.
+## Fungsi/Method
 
-## Metode-Metode yang Tersedia
-Berikut adalah penjelasan mendetail tentang setiap metode yang tersedia di Move.js:
+### _move(element, distance, loop, speed, direction)
 
-### `right(element, distance = 100, loop = false, speed = 2)`
-Menggerakkan elemen ke arah kanan.
-* `element`: Selector elemen yang ingin digerakkan.
-* `distance`: Jarak pergeseran (default: 100px).
-* `loop`: Apakah animasi harus diulang (default: false).
-* `speed`: Kecepatan animasi (default: 2px/frame).
+Fungsi ini adalah fungsi internal yang digunakan oleh fungsi lainnya untuk membuat animasi. Fungsi ini tidak disarankan untuk digunakan secara langsung.
 
-### `left(element, distance = 100, loop = false, speed = 2)`
-Menggerakkan elemen ke arah kiri.
-* `element`: Selector elemen yang ingin digerakkan.
-* `distance`: Jarak pergeseran (default: 100px).
-* `loop`: Apakah animasi harus diulang (default: false).
-* `speed`: Kecepatan animasi (default: 2px/frame).
+* `element`: Elemen atau array elemen yang akan dianimasikan.
+* `distance`: Jarak yang akan ditempuh oleh elemen.
+* `loop`: Boolean yang menentukan apakah animasi akan diulang.
+* `speed`: Kecepatan animasi.
+* `direction`: Arah animasi (right, left, up, down, atau rotate).
 
-### `up(element, distance = 100, loop = false, speed = 2)`
-Menggerakkan elemen ke arah atas.
-* `element`: Selector elemen yang ingin digerakkan.
-* `distance`: Jarak pergeseran (default: 100px).
-* `loop`: Apakah animasi harus diulang (default: false).
-* `speed`: Kecepatan animasi (default: 2px/frame).
+### move(element, targetX, targetY, speed, loop)
 
-### `down(element, distance = 100, loop = false, speed = 2)`
-Menggerakkan elemen ke arah bawah.
-* `element`: Selector elemen yang ingin digerakkan.
-* `distance`: Jarak pergeseran (default: 100px).
-* `loop`: Apakah animasi harus diulang (default: false).
-* `speed`: Kecepatan animasi (default: 2px/frame).
+Fungsi ini membuat elemen bergerak ke koordinat spesifik.
 
-### `rotate(element, distance = 360, loop = false, speed = 2)`
-Menggerakkan elemen dengan rotasi.
-* `element`: Selector elemen yang ingin digerakkan.
-* `distance`: Jarak rotasi (default: 360deg).
-* `loop`: Apakah animasi harus diulang (default: false).
-* `speed`: Kecepatan animasi (default: 2deg/frame).
+* `element`: Elemen atau array elemen yang akan dianimasikan.
+* `targetX`: Koordinat X yang akan dituju.
+* `targetY`: Koordinat Y yang akan dituju.
+* `speed`: Kecepatan animasi.
+* `loop`: Boolean yang menentukan apakah animasi akan diulang.
 
-### `move(element, targetX, targetY, speed = 2, loop = false)`
-Menggerakkan elemen ke koordinat spesifik.
-* `element`: Selector elemen yang ingin digerakkan.
-* `targetX`: Koordinat X target.
-* `targetY`: Koordinat Y target.
-* `speed`: Kecepatan animasi (default: 2px/frame).
-* `loop`: Apakah animasi harus diulang (default: false).
+### stop(element)
 
-### `stop(element)`
-Menghentikan animasi elemen.
-* `element`: Selector elemen yang ingin dihentikan.
+Fungsi ini menghentikan animasi elemen.
 
-### `stopAll()`
-Menghentikan semua animasi.
+* `element`: Elemen yang akan dihentikan animasinya.
 
-### `isColiding(selector1, selector2)`
-Memeriksa apakah dua elemen sedang bertabrakan.
+### stopAll()
+
+Fungsi ini menghentikan semua animasi.
+
+### isColiding(selector1, selector2)
+
+Fungsi ini memeriksa apakah dua elemen sedang bertabrakan.
+
 * `selector1`: Selector elemen pertama.
 * `selector2`: Selector elemen kedua.
 
-### `key(cmd = "console.log('Not found cmd')", delay = 2)`
-Menjalankan perintah tertentu dengan delay.
-* `cmd`: Perintah yang ingin dijalankan.
-* `delay`: Waktu delay (default: 2 detik).
+### right(element, distance, loop, speed)
 
-### `imgAnimation(element, usrc, delay = 0.5, loop = false)`
-Menganimasikan gambar dengan mengganti sumber gambar.
-* `element`: Selector elemen gambar yang ingin dianimasikan.
-* `usrc`: Sumber gambar baru.
-* `delay`: Waktu delay (default: 0.5 detik).
-* `loop`: Apakah animasi harus diulang (default: false).
+Fungsi ini membuat elemen bergerak ke kanan.
+
+* `element`: Elemen atau array elemen yang akan dianimasikan.
+* `distance`: Jarak yang akan ditempuh oleh elemen.
+* `loop`: Boolean yang menentukan apakah animasi akan diulang.
+* `speed`: Kecepatan animasi.
+
+### left(element, distance, loop, speed)
+
+Fungsi ini membuat elemen bergerak ke kiri.
+
+* `element`: Elemen atau array elemen yang akan dianimasikan.
+* `distance`: Jarak yang akan ditempuh oleh elemen.
+* `loop`: Boolean yang menentukan apakah animasi akan diulang.
+* `speed`: Kecepatan animasi.
+
+### up(element, distance, loop, speed)
+
+Fungsi ini membuat elemen bergerak ke atas.
+
+* `element`: Elemen atau array elemen yang akan dianimasikan.
+* `distance`: Jarak yang akan ditempuh oleh elemen.
+* `loop`: Boolean yang menentukan apakah animasi akan diulang.
+* `speed`: Kecepatan animasi.
+
+### down(element, distance, loop, speed)
+
+Fungsi ini membuat elemen bergerak ke bawah.
+
+* `element`: Elemen atau array elemen yang akan dianimasikan.
+* `distance`: Jarak yang akan ditempuh oleh elemen.
+* `loop`: Boolean yang menentukan apakah animasi akan diulang.
+* `speed`: Kecepatan animasi.
+
+### rotate(element, distance, loop, speed)
+
+Fungsi ini membuat elemen berputar.
+
+* `element`: Elemen atau array elemen yang akan dianimasikan.
+* `distance`: Jarak yang akan ditempuh oleh elemen.
+* `loop`: Boolean yang menentukan apakah animasi akan diulang.
+* `speed`: Kecepatan animasi.
+
+### key(cmd, delay)
+
+Fungsi ini menjalankan perintahJavaScript setelah delay tertentu.
+
+* `cmd`: Perintah JavaScript yang akan dijalankan.
+* `delay`: Waktu delay dalam detik.
+
+### imgAnimation(element, usrc, delay, loop)
+
+Fungsi ini membuat animasi gambar.
+
+* `element`: Elemen atau array elemen yang akan dianimasikan.
+* `usrc`: Array sumber gambar yang akan dianimasikan.
+* `delay`: Waktu delay antara gambar dalam detik.
+* `loop`: Boolean yang menentukan apakah animasi akan diulang.
 
 ## Contoh Kode Penggunaan
-Berikut adalah contoh kode penggunaan Move.js dengan chaining dan async/await:
+
+### Chaining
 ```javascript
-const movey = new Move();
-
-// Menggerakkan elemen ke kanan
-movey.right('#elemen', 100, true, 2);
-
-// Menggerakkan elemen ke koordinat spesifik
-movey.move('#elemen', 200, 200, 2, true);
-
-// Menghentikan animasi
-movey.stop('#elemen');
-
-// Menjalankan perintah dengan delay
-movey.key('console.log("Halo!")', 2);
-
-// Menganimasikan gambar
-movey.imgAnimation('#gambar', ['gambar1.jpg', 'gambar2.jpg'], 0.5, true);
+movey.right('#elem', 100, true, 2)
+  .down('#elem', 100, true, 2)
+  .rotate('#elem', 360, true, 2);
 ```
-Dengan menggunakan Move.js, Anda dapat membuat animasi DOM sederhana dengan mudah dan cepat.
+### Async/Await
+```javascript
+async function animasi() {
+  await movey.key("console.log('Hello World!')", 2);
+  await movey.imgAnimation('#img', ['img1.jpg', 'img2.jpg'], 0.5, true);
+}
+
+animasi();
+```
+Dengan menggunakan library Move.js, Anda dapat membuat animasi DOM sederhana dengan mudah dan efektif.
