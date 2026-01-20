@@ -1,129 +1,131 @@
-# Move.js
-## Library untuk Animasi DOM Sederhana
+# Move.js: A Simple DOM Animation Library
 
-Move.js adalah sebuah library JavaScript yang memungkinkan Anda untuk membuat animasi DOM sederhana dengan mudah. Dengan menggunakan library ini, Anda dapat membuat objek bergerak, berputar, dan melakukan animasi lainnya dengan mudah.
+Move.js is a lightweight JavaScript library designed to simplify the process of creating animations on the DOM. It provides a straightforward API for moving, rotating, and animating elements, making it perfect for developers looking to add some flair to their web applications.
 
-## Cara Instalasi/Penggunaan Awal
+## Getting Started
 
-Untuk menggunakan library ini, Anda hanya perlu membuat instance dari kelas `Move`:
+To start using Move.js, simply create a new instance of the `Move` class:
 ```javascript
 const movey = new Move();
 ```
-## Fungsi/Method
+You can then use the various methods provided by the library to animate your elements.
+
+## Methods
 
 ### _move(element, distance, loop, speed, direction)
 
-Fungsi ini adalah fungsi internal yang digunakan oleh fungsi lainnya untuk membuat animasi. Fungsi ini tidak disarankan untuk digunakan secara langsung.
+*   **element**: The element(s) to animate (can be a single element or an array of elements)
+*   **distance**: The distance to move the element(s) (in pixels)
+*   **loop**: Whether to loop the animation (true/false)
+*   **speed**: The speed of the animation (in pixels per frame)
+*   **direction**: The direction of the animation (can be 'right', 'left', 'up', 'down', or 'rotate')
 
-* `element`: Elemen atau array elemen yang akan dianimasikan.
-* `distance`: Jarak yang akan ditempuh oleh elemen.
-* `loop`: Boolean yang menentukan apakah animasi akan diulang.
-* `speed`: Kecepatan animasi.
-* `direction`: Arah animasi (right, left, up, down, atau rotate).
+This method is the core of the library and is used by the other methods to perform the actual animation.
 
 ### move(element, targetX, targetY, speed, loop)
 
-Fungsi ini membuat elemen bergerak ke koordinat spesifik.
+*   **element**: The element(s) to animate (can be a single element or an array of elements)
+*   **targetX**: The target X-coordinate of the element(s)
+*   **targetY**: The target Y-coordinate of the element(s)
+*   **speed**: The speed of the animation (in pixels per frame)
+*   **loop**: Whether to loop the animation (true/false)
 
-* `element`: Elemen atau array elemen yang akan dianimasikan.
-* `targetX`: Koordinat X yang akan dituju.
-* `targetY`: Koordinat Y yang akan dituju.
-* `speed`: Kecepatan animasi.
-* `loop`: Boolean yang menentukan apakah animasi akan diulang.
+This method moves the element(s) to the specified coordinates.
 
 ### stop(element)
 
-Fungsi ini menghentikan animasi elemen.
+*   **element**: The element to stop animating
 
-* `element`: Elemen yang akan dihentikan animasinya.
+This method stops the animation of the specified element.
 
 ### stopAll()
 
-Fungsi ini menghentikan semua animasi.
+This method stops all animations.
 
 ### isColiding(selector1, selector2)
 
-Fungsi ini memeriksa apakah dua elemen sedang bertabrakan.
+*   **selector1**: The first element to check for collision
+*   **selector2**: The second element to check for collision
 
-* `selector1`: Selector elemen pertama.
-* `selector2`: Selector elemen kedua.
+This method checks if the two specified elements are colliding.
 
 ### right(element, distance, loop, speed)
 
-Fungsi ini membuat elemen bergerak ke kanan.
+*   **element**: The element(s) to animate (can be a single element or an array of elements)
+*   **distance**: The distance to move the element(s) (in pixels)
+*   **loop**: Whether to loop the animation (true/false)
+*   **speed**: The speed of the animation (in pixels per frame)
 
-* `element`: Elemen atau array elemen yang akan dianimasikan.
-* `distance`: Jarak yang akan ditempuh oleh elemen.
-* `loop`: Boolean yang menentukan apakah animasi akan diulang.
-* `speed`: Kecepatan animasi.
+This method moves the element(s) to the right.
 
 ### left(element, distance, loop, speed)
 
-Fungsi ini membuat elemen bergerak ke kiri.
+*   **element**: The element(s) to animate (can be a single element or an array of elements)
+*   **distance**: The distance to move the element(s) (in pixels)
+*   **loop**: Whether to loop the animation (true/false)
+*   **speed**: The speed of the animation (in pixels per frame)
 
-* `element`: Elemen atau array elemen yang akan dianimasikan.
-* `distance`: Jarak yang akan ditempuh oleh elemen.
-* `loop`: Boolean yang menentukan apakah animasi akan diulang.
-* `speed`: Kecepatan animasi.
+This method moves the element(s) to the left.
 
 ### up(element, distance, loop, speed)
 
-Fungsi ini membuat elemen bergerak ke atas.
+*   **element**: The element(s) to animate (can be a single element or an array of elements)
+*   **distance**: The distance to move the element(s) (in pixels)
+*   **loop**: Whether to loop the animation (true/false)
+*   **speed**: The speed of the animation (in pixels per frame)
 
-* `element`: Elemen atau array elemen yang akan dianimasikan.
-* `distance`: Jarak yang akan ditempuh oleh elemen.
-* `loop`: Boolean yang menentukan apakah animasi akan diulang.
-* `speed`: Kecepatan animasi.
+This method moves the element(s) up.
 
 ### down(element, distance, loop, speed)
 
-Fungsi ini membuat elemen bergerak ke bawah.
+*   **element**: The element(s) to animate (can be a single element or an array of elements)
+*   **distance**: The distance to move the element(s) (in pixels)
+*   **loop**: Whether to loop the animation (true/false)
+*   **speed**: The speed of the animation (in pixels per frame)
 
-* `element`: Elemen atau array elemen yang akan dianimasikan.
-* `distance`: Jarak yang akan ditempuh oleh elemen.
-* `loop`: Boolean yang menentukan apakah animasi akan diulang.
-* `speed`: Kecepatan animasi.
+This method moves the element(s) down.
 
 ### rotate(element, distance, loop, speed)
 
-Fungsi ini membuat elemen berputar.
+*   **element**: The element(s) to animate (can be a single element or an array of elements)
+*   **distance**: The distance to rotate the element(s) (in degrees)
+*   **loop**: Whether to loop the animation (true/false)
+*   **speed**: The speed of the animation (in degrees per frame)
 
-* `element`: Elemen atau array elemen yang akan dianimasikan.
-* `distance`: Jarak yang akan ditempuh oleh elemen.
-* `loop`: Boolean yang menentukan apakah animasi akan diulang.
-* `speed`: Kecepatan animasi.
+This method rotates the element(s).
 
 ### key(cmd, delay)
 
-Fungsi ini menjalankan perintahJavaScript setelah delay tertentu.
+*   **cmd**: The command(s) to execute (can be a single command or an array of commands)
+*   **delay**: The delay between commands (in seconds)
 
-* `cmd`: Perintah JavaScript yang akan dijalankan.
-* `delay`: Waktu delay dalam detik.
+This method executes the specified command(s) with a delay.
 
 ### imgAnimation(element, usrc, delay, loop)
 
-Fungsi ini membuat animasi gambar.
+*   **element**: The element(s) to animate (can be a single element or an array of elements)
+*   **usrc**: The source(s) of the image(s) to animate (can be a single source or an array of sources)
+*   **delay**: The delay between frames (in seconds)
+*   **loop**: Whether to loop the animation (true/false)
 
-* `element`: Elemen atau array elemen yang akan dianimasikan.
-* `usrc`: Array sumber gambar yang akan dianimasikan.
-* `delay`: Waktu delay antara gambar dalam detik.
-* `loop`: Boolean yang menentukan apakah animasi akan diulang.
+This method animates the image(s) by changing the source(s) with a delay.
 
-## Contoh Kode Penggunaan
+## Examples
 
 ### Chaining
 ```javascript
-movey.right('#elem', 100, true, 2)
-  .down('#elem', 100, true, 2)
-  .rotate('#elem', 360, true, 2);
+movey.right('#element', 100, true, 2)
+  .down('#element', 100, true, 2)
+  .left('#element', 100, true, 2)
+  .up('#element', 100, true, 2);
 ```
 ### Async/Await
 ```javascript
-async function animasi() {
-  await movey.key("console.log('Hello World!')", 2);
-  await movey.imgAnimation('#img', ['img1.jpg', 'img2.jpg'], 0.5, true);
+async function animate() {
+  await movey.key('console.log("Hello World!")', 2);
+  await movey.imgAnimation('#image', ['image1.jpg', 'image2.jpg'], 0.5, true);
 }
 
-animasi();
+animate();
 ```
-Dengan menggunakan library Move.js, Anda dapat membuat animasi DOM sederhana dengan mudah dan efektif.
+Note: This is just a basic example of how to use the library. You can customize the animations and commands to fit your specific needs.
